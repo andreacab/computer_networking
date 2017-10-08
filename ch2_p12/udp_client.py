@@ -3,12 +3,13 @@ from socket import *
 HOST = '192.168.1.64'
 PORT = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
-while True
+while True:
     message = raw_input('Input lowercase sentence:')
-    break if message == 'q' || message == 'quit' || message == 'exit'
+    if (message == 'q') or (message == 'quit') or (message == 'exit'):
+        break
     print('sending message...')
     clientSocket.sendto(message.encode(), (HOST, PORT))
     response, serverAddress = clientSocket.recvfrom(2048)
-    print(response, ", from ", serverAddress, sep="")
+    print(response + ", from " + str(serverAddress))
 
 clientSocket.close()
