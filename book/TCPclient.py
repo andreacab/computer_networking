@@ -1,11 +1,11 @@
 from socket import *
 
-serverName = '108.180.181.245'
-serverPort = 12000
+serverName = '192.168.1.68'
+serverPort = 12001
 clientSocket = socket(AF_INET, SOCK_STREAM)
 clientSocket.connect((serverName, serverPort))
 sentence = raw_input('input lowercase sentence:')
-clientSocket.send(message.encode())
-modifiedSentence = clientSocket.recvfrom(2048)
+clientSocket.send(sentence.encode())
+modifiedSentence, _ = clientSocket.recvfrom(2048)
 print('From server: ', modifiedSentence.decode())
 clientSocket.close()

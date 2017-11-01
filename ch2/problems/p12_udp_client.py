@@ -1,6 +1,6 @@
 from socket import *
 
-HOST = '192.168.1.64'
+HOST = '75.155.164.149'
 PORT = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 while True:
