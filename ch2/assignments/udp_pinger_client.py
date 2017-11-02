@@ -9,7 +9,8 @@ clientSocket.settimeout(1.0)
 for i in range(1, 11):
     clientSocket.connect((SERVER, PORT))
     sentTime = datetime.now()
-    clientSocket.send(" ".join(["Ping", str(i), sentTime.strftime('%Y-%m-%d_%H:%M:%S')]).encode())
+    message = " ".join(["Ping", str(i), sentTime.strftime('%Y-%m-%d_%H:%M:%S')])
+    clientSocket.send(message.encode())
 
     try:
         message = clientSocket.recv(1024).decode()
