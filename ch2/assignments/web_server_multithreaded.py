@@ -45,7 +45,9 @@ while True:
     #Establish the connection
     print('Ready to serve...')
     connectionSocket, _addr = serverSocket.accept()
+
     logging.debug('accepted connection on: ' + str(_addr))
+
     t = threading.Thread(target=worker, args=(connectionSocket, _addr))
     t.start()
 
