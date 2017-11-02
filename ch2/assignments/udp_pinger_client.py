@@ -17,7 +17,7 @@ for i in range(1, 11):
         recvTime = datetime.now()
         if message is not None:
             print message
-        timeDifference = sentTime - recvTime
+        timeDifference = recvTime - sentTime
         print "RTT is " + str(timeDifference.total_seconds())
     except timeout:
         print "Request timed out"
